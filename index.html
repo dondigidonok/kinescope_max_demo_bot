@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Kinescope в MAX</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="https://st.max.ru/js/max-web-app.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1 class="title">Видео</h1>
+    <p class="subtitle">Плеер Kinescope (DRM и без DRM)</p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Выбор ролика">
+    <button type="button" id="tab-drm" class="tab is-active" role="tab" aria-selected="true" aria-controls="panel-drm" data-tab="drm">
+      С защитой DRM
+    </button>
+    <button type="button" id="tab-open" class="tab" role="tab" aria-selected="false" aria-controls="panel-open" data-tab="open">
+      Без DRM
+    </button>
+  </nav>
+
+  <main class="panels">
+    <section id="panel-drm" class="panel is-active" role="tabpanel" aria-labelledby="tab-drm">
+      <div class="embed">
+        <iframe
+          title="Видео с DRM (Kinescope)"
+          src="https://kinescope.io/embed/2WFmbHsNz1W72DL9DGz2ps"
+          allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+    </section>
+
+    <section id="panel-open" class="panel" role="tabpanel" aria-labelledby="tab-open" hidden>
+      <div class="embed">
+        <iframe
+          title="Видео без DRM (Kinescope)"
+          src="https://kinescope.io/embed/mMZhUWSyT2F4aWFp6BJT5X"
+          allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
